@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://calculadora.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://calculadora.com.br" xmlns:intf="http://calculadora.com.br" xmlns:tns1="http://lang.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://calculadora.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://lang.java"/>
+   <element name="num1" type="xsd:int"/>
+   <element name="num2" type="xsd:int"/>
+   <element name="somaReturn" type="xsd:anyType"/>
+   <element name="num3" type="xsd:int"/>
+   <element name="num4" type="xsd:int"/>
+   <element name="divisaoReturn" type="xsd:int"/>
+   <element name="num5" type="xsd:int"/>
+   <element name="num6" type="xsd:int"/>
+   <element name="multiplicacaoReturn" type="xsd:int"/>
+   <element name="num7" type="xsd:int"/>
+   <element name="num8" type="xsd:int"/>
+   <element name="subtracaoReturn" type="tns1:Number"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="multiplicacaoRequest">
+
+      <wsdl:part element="impl:num5" name="num1">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num6" name="num2">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisaoResponse">
+
+      <wsdl:part element="impl:divisaoReturn" name="divisaoReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplicacaoResponse">
+
+      <wsdl:part element="impl:multiplicacaoReturn" name="multiplicacaoReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtracaoRequest">
+
+      <wsdl:part element="impl:num7" name="num1">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num8" name="num2">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divisaoRequest">
+
+      <wsdl:part element="impl:num3" name="num1">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num4" name="num2">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtracaoResponse">
+
+      <wsdl:part element="impl:subtracaoReturn" name="subtracaoReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="somaRequest">
+
+      <wsdl:part element="impl:num1" name="num1">
+
+      </wsdl:part>
+
+      <wsdl:part element="impl:num2" name="num2">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="somaResponse">
+
+      <wsdl:part element="impl:somaReturn" name="somaReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="calculadora">
+
+      <wsdl:operation name="soma" parameterOrder="num1 num2">
+
+         <wsdl:input message="impl:somaRequest" name="somaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:somaResponse" name="somaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divisao" parameterOrder="num1 num2">
+
+         <wsdl:input message="impl:divisaoRequest" name="divisaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divisaoResponse" name="divisaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplicacao" parameterOrder="num1 num2">
+
+         <wsdl:input message="impl:multiplicacaoRequest" name="multiplicacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplicacaoResponse" name="multiplicacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtracao" parameterOrder="num1 num2">
+
+         <wsdl:input message="impl:subtracaoRequest" name="subtracaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtracaoResponse" name="subtracaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="calculadoraSoapBinding" type="impl:calculadora">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="soma">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="somaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="somaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divisao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divisaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divisaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplicacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplicacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplicacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtracao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtracaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtracaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="calculadoraService">
+
+      <wsdl:port binding="impl:calculadoraSoapBinding" name="calculadora">
+
+         <wsdlsoap:address location="http://localhost:8080/AtividadeCalc/services/calculadora"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
